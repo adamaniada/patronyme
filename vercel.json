@@ -1,0 +1,51 @@
+{
+    "regions": [
+        "hnd1"
+    ],
+    "functions": {
+        "api/index.php": { "runtime": "vercel-php@0.5.2" }
+    },
+    "routes": [
+        {
+            "src": "/(css|js|images|videos)/(.*)",
+            "dest": "/public/$1/$2"
+        },
+        {
+            "src": "/build/assets/(.*)",
+            "dest": "/public/build/assets/$1"
+        },
+        {
+            "src": "/favicon.ico",
+            "dest": "/public/favicon.ico"
+        },
+        {
+            "src": "/robots.txt",
+            "dest": "/public/robots.txt"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
+    "env": {
+        "APP_NAME": "patronyme",
+        "APP_ENV": "production",
+        "APP_DEBUG": "true",
+        "APP_URL": "https://patronyme.vercel.app",
+
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "cookie",
+        "VIEW_COMPILED_PATH": "/tmp/views",
+        "SSR_TEMP_PATH": "/tmp/ssr",
+        "NODE_PATH": "node",
+
+        "DB_CONNECTION": "sqlite",
+        "DB_HOST": "127.0.0.1"
+    }
+}
